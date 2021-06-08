@@ -9,9 +9,7 @@ public class Converter {
     System.out.print("Type a celesius temprature (blank to quit): ");
     String userInput = scanner.nextLine();
     while (!userInput.isEmpty()) {
-      System.out.print("Farenheit Temperature :");
-      System.out.println(convertC2F(Double.parseDouble(userInput)));
-      System.out.print("Type a celesius temprature (blank to quit): ");
+      System.out.printf("Farenheit Temperature: %,.2f degrees%nType a celesius temprature (blank to quit): " ,convertC2F(Double.parseDouble(userInput)));
       userInput = scanner.nextLine();
     }
   }
