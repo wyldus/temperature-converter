@@ -8,6 +8,9 @@ public class Converter {
   private static final String FAHRENHEIT_OUTPUT_FORMAT =
       "Fahrenheit Temperature: %,.2f degrees%nType a Celsius temperature (blank to quit): ";
   private static final String PARSE_EXCEPTION_FORMAT = "Unable to parse \"%s\". Please try again ";
+  private static final double FAHRENHEIT_PER_CELSIUS = 9.0 / 5 ;
+  private static final double CELSIUS_PER_FARENHEIT = 5.0 / 9 ;
+  private static final double FAHRENHEIT_FREEZING_POINT = 32;
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -30,12 +33,12 @@ public class Converter {
 
   public static double convertC2F(double celsius) {
 
-    return celsius * 9 / 5 + 32;
+    return celsius * FAHRENHEIT_PER_CELSIUS + FAHRENHEIT_FREEZING_POINT;
   }
 
   public static double convertF2C (double fahrenheit) {
 
-    return 5 * (fahrenheit - 32) / 9; // TODO ensure correct code
+    return  (fahrenheit - FAHRENHEIT_FREEZING_POINT) * CELSIUS_PER_FARENHEIT ;
 
   }
 }
