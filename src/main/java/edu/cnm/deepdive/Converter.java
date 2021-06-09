@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Converter {
 
   private static final String INPUT_PROMPT = "Type a Celsius temperature (blank to quit): ";
-  private static final String FARENHEIT_OUTPUT_FORMAT =
+  private static final String FAHRENHEIT_OUTPUT_FORMAT =
       "Fahrenheit Temperature: %,.2f degrees%nType a Celsius temperature (blank to quit): ";
   private static final String PARSE_EXCEPTION_FORMAT = "Unable to parse \"%s\". Please try again ";
 
@@ -19,7 +19,7 @@ public class Converter {
           try {
             //TODO Check last character of userInput; if 'f', treat as Fahrenheit; otherwise, Celsius.
             System.out.printf(
-                FARENHEIT_OUTPUT_FORMAT
+                FAHRENHEIT_OUTPUT_FORMAT
                 ,convertC2F(Double.parseDouble(userInput)));
           } catch (NumberFormatException e) {
             System.out.printf(PARSE_EXCEPTION_FORMAT, userInput );
