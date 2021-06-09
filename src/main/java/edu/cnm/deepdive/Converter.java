@@ -1,10 +1,11 @@
 package edu.cnm.deepdive;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Converter {
 
-  private static final String INPUT_PROMPT = "Type a Celsius temperature (blank to quit): ";
+  private static final String INPUT_PROMPT = "Type a Celsius or Fahrenheit (ending with'f') temperature (blank to quit): ";
   private static final String FAHRENHEIT_OUTPUT_FORMAT =
       "Fahrenheit Temperature: %,.2f degrees%nType a Celsius temperature (blank to quit): ";
   private static final String PARSE_EXCEPTION_FORMAT = "Unable to parse \"%s\". Please try again ";
@@ -17,11 +18,19 @@ public class Converter {
       System.out.print(INPUT_PROMPT);
         String userInput = scanner
             .nextLine()
-            .trim() ;
+            .trim()
+           .toLowerCase() ;
         while (!userInput.isEmpty()) {
           try {
-            //TODO Check last character of userInput; if 'f', treat as Fahrenheit; otherwise, Celsius.
+            char lastChar = userInput.charAt(userInput.length()-1);
+            if (lastChar == 'f') {
+              //TODO convert everything in userInput BUT the last character from fahrenheit to celsius
+            } else {
+
+            }
+
             System.out.printf(
+
                 FAHRENHEIT_OUTPUT_FORMAT
                 ,convertC2F(Double.parseDouble(userInput)));
           } catch (NumberFormatException e) {
