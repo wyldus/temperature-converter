@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Converter {
 
-  private static final String INPUT_PROMPT = "Type a celesius temprature (blank to quit): ";
+  private static final String INPUT_PROMPT = "Type a Celsius temperature (blank to quit): ";
   private static final String FARENHEIT_OUTPUT_FORMAT =
-      "Farenheit Temperature: %,.2f degrees%nType a celesius temprature (blank to quit): ";
+      "Fahrenheit Temperature: %,.2f degrees%nType a Celsius temperature (blank to quit): ";
   private static final String PARSE_EXCEPTION_FORMAT = "Unable to parse \"%s\". Please try again ";
 
   public static void main(String[] args) {
@@ -35,7 +35,7 @@ public class Converter {
 
   public static double convertF2C (double fahrenheit) {
 
-    return 0; // TODO Implement the Fahrenheit-to-Celsius conversion formula.
+    return 5 * (fahrenheit - 32) / 9; // TODO ensure correct code
 
   }
 }
